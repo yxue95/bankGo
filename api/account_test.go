@@ -91,7 +91,7 @@ func TestGetAccountAPI(t *testing.T) {
 			store := mockdb.NewMockStore(ctrl)
 			tc.buildStubs(store)
 
-			server := NewServer(store)
+			server := newTestServer(t, store)
 			// build a server with the mock store
 			recorder := httptest.NewRecorder()
 
